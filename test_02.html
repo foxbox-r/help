@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>html태그 속성 변경하기</h1>
+    <hr>
+
+    <input id="input" type="text" value="good" placeholder="문자를 입력하세요" /> <button onclick="showInfo()">input정보보기</button>
+    <hr>
+
+    <h2>input.type = text , password , button , file , color ,number (하나씩 다 바꿔봐.)</h2>
+    <button onclick="changeTypeToPassword()">changeTypeToPassword()</button>
+    <button onclick="changeTypeToText()">changeTypeToText()</button>
+    <hr>
+
+    <h2>input.value = 니가 원하는 문자</h2>
+    <button onclick="changeValue()">changeValue()</button>
+    <hr>
+
+    <script>
+        const input = document.querySelector("#input");
+
+        function showInfo(){
+            alert("f12 눌러서 콘솔창 확인하세요.");
+            console.log("input.id : ",input.id);
+            console.log("input.type : ",input.type);
+            console.log("input.value : ",input.value);
+            console.log("input.placeholder : ",input.placeholder);
+        }
+
+        function changeTypeToPassword(){
+            input.type = "password";
+        }
+        function changeTypeToText(){
+            input.type = "text";
+        }
+
+        function changeValue(){
+            input.value = "내가 원하는 문자";
+        }
+
+    </script>
+
+</body>
+</html>

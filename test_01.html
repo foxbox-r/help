@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>html태그 가져오기</h1>
+    <hr>
+    
+    <h1 id="header">id : header</h1>
+
+    <ul>
+        <li class="listItem">1 class : listItem</li>
+        <li class="listItem">2 class : listItem</li>
+        <li class="listItem">3 class : listItem</li>
+    </ul>
+
+    <script>
+
+        console.log("getElementBy Id or ClaaName\n");
+
+        const header_by_id = document.getElementById("header");
+        console.log("getElementById('header') : ",header_by_id);
+
+        const listItems_by_class = document.getElementsByClassName("listItem"); //
+        console.log("getElementByClassName('listItem') : ",listItems_by_class);
+
+
+        console.log('\n querySelector \n');
+
+        const header_query_selector = document.querySelector("#header");
+        console.log("querySelector('#header') : ",header_query_selector);
+
+        const listItems_query_selector = document.querySelector(".listItem"); // <= 모든 <li class="listItem"> 태그중 제일 위에 있는 태그만 가져옴
+        console.log("querySelector('.listItem') : ",listItems_query_selector);
+
+        const listItems_query_selector_all = document.querySelectorAll(".listItem"); // <= 모든 <li class="listItem"> 태그를 배열로 가져옴
+        console.log("querySelectorAll('.listItem') : ",listItems_query_selector_all);
+        
+
+
+    </script>
+</body>
+</html>
