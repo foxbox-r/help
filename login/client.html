@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- <form id="form"> -->
+       
+       
+       
+        <div>
+            <input id="input_id" type="text" name="id">
+        </div>
+        <div>
+            <input id="input_pw" type="password" name="pw">
+
+            <input type="button"  value="change" onclick="changeType()">
+        </div>
+
+
+        <div>
+            <input id="input_submit" type="button" value="submit" onclick="onClickSubmit()">
+        </div>
+
+        <!-- <div>
+            <input id="submit" type="submit" value="form">
+        </div> -->
+    <!-- </form> -->
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+        const input_id = document.querySelector("#input_id");
+        const input_pw = document.querySelector("#input_pw");
+        const input_submit = document.querySelector("#input_submit");
+        const form = document.querySelector("#form");
+
+        const backAddress = "http://localhost:80";
+
+        input_submit.addEventListener("click",onClickSubmit);
+
+        // form.addEventListener("submit",onClickSubmitForm)
+
+        function changeType(){
+            input_pw.type = "text";
+        }
+
+        async function onClickSubmit(e){
+            console.log("id :",input_id.value);
+            console.log("pw :",input_pw.value);
+
+            const data = {
+                id:input_id.value,
+                password:input_pw.value,
+            };
+
+            const result = await axios.post(`${backAddress}/login`,data);
+            console.log(result.data);
+        }
+
+        // function onClickSubmitForm(e){
+        //     console.log(e.target.id.value,e.target.pw.value);
+        // }
+    </script>
+</body>
+</html>
